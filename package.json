@@ -1,0 +1,39 @@
+{
+	"name": "pep9-asm",
+	"displayName": "Pep/9 Assembly",
+	"description": "Language support for the Pep/9 assembly language",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"author": {
+		"name": "Isaac Corbrey",
+		"email": "icorbrey@gmail.com",
+		"url": "https://www.github.com/icorbrey"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "pep9",
+				"aliases": [
+					"Pep/9 Assembly",
+					"pep9"
+				],
+				"extensions": [
+					".pep"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "pep9",
+				"scopeName": "source.pep",
+				"path": "./syntaxes/pep9.tmLanguage.json"
+			}
+		]
+	}
+}
