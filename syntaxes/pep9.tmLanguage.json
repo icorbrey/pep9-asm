@@ -13,40 +13,56 @@
 		"keywords": {
 			"patterns": [
 				{
-					"name": "comment.line.pep9",
-					"match": ";[^;]*$"
+					"name": "comment.line",
+					"match": ";[^;].*"
 				},
 				{
 					"name": "comment.block.documentation",
-					"match": ";;.*$"
+					"match": ";;.*"
 				},
 				{
-					"name": "variable.name",
-					"match": "^[A-Za-z0-9]{1,7}\\b",
-					"begin": "",
-					"end": ":"
+					"name": "entity.name.function",
+					"match": "(?i)\\bCALL\\b"
 				},
 				{
-					"name": "keyword.control",
-					"match": "(?i)\\b(STOP|RET|RETTR|MOVSPA|MOVFLGA|MOVAFLG|BR(LE|LT|EQ|NE|GE|GT|V|C)?|CALL|NOPn?)\\b"
+					"name": "entity.name.class",
+					"match": "(?i)\\bBR([LG][ET]|EQ|NE|[VC])?\\b"
 				},
 				{
-					"name": "keyword.control.operator",
-					"match": "(?i)\\b((NOT|NEG|ASL|ASR|ROL|ROR|ADD|SUB|AND|OR|CPW|CPB|LDW|LDB|STW|STB)[ax]|(ADD|SUB)sp)\\b"
+					"name": "entity.name.function",
+					"match": "(?i)\\b(DEC[IO]|HEXO|STRO)\\b"
 				},
 				{
 					"name": "keyword.other",
-					"match": "(?i)((\\s|^)\\.(EQUATE|BLOCK|WORD|ASCII|ADDRSS|END)|\\b(DEC[IO]|HEXO|STRO))\\b"
+					"match": "(?i)(\\b(ADD|SUB)sp|(\\s|^)\\.(EQUATE|BLOCK|WORD|ASCII|ADDRSS|END))\\b"
+				},
+				{
+					"name": "keyword.operator",
+					"match": "(?i)\\b(NOT|NEG|(AS|RO)[LR]|ADD|SUB|AND|OR|(CP|LD|ST)[WB])[ax]\\b"
+				},
+				{
+					"name": "keyword.control",
+					"match": "(?i)\\b(STOP|RET(TR)?|MOV(SPA|FLGA|AFLG))\\b"
 				},
 				{
 					"name": "entity.name.tag",
+					"match": "(?i)\\b(i|d|n|x|s(x|fx?)?)\\b",
 					"begin": ",",
-					"match": "(?i)\\b(i|d|n|s|sf|x|sx|sfx)\\b",
 					"end": " "
 				},
 				{
 					"name": "constant.numeric",
-					"match": "\\b(\\d+|0x\\d{4})\\b"
+					"match": "-?\\b(\\d+|0x\\d{4})\\b"
+				},
+				{
+					"name": "variable.parameter",
+					"match": "^[A-Za-z][A-Za-z0-9]{1,6}\\b",
+					"begin": "",
+					"end": ":"
+				},
+				{
+					"name": "variable.name",
+					"match": "\\b[A-Za-z][A-Za-z0-9]{1,6}\\b"
 				}
 			]
 		},
