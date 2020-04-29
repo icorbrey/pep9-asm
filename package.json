@@ -1,19 +1,34 @@
 {
 	"name": "pep9-asm",
-	"displayName": "Pep/9 Assembly",
-	"description": "Language support for the Pep/9 assembly language",
 	"version": "0.0.1",
+	"publisher": "icorbrey",
 	"engines": {
 		"vscode": "^1.44.0"
 	},
-	"categories": [
-		"Programming Languages"
-	],
+	"license": "MIT",
+	"displayName": "Pep/9 Assembly",
+	"description": "Language support for the Pep/9 assembly language",
 	"author": {
 		"name": "Isaac Corbrey",
 		"email": "icorbrey@gmail.com",
 		"url": "https://www.github.com/icorbrey"
 	},
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"Pep",
+		"Pep/9",
+		"Pep Assembly",
+		"Pep/9 Assembly",
+		"Assembly",
+		"Computer Systems"
+	],
+	"preview": true,
+	"repository": {
+		"url": "https://www.github.com/icorbrey/pep9-asm"
+	},
+	"icon": "images/icon.bmp",
 	"contributes": {
 		"languages": [
 			{
