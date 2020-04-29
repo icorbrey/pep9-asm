@@ -1,6 +1,6 @@
 {
 	"name": "pep9-asm",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"publisher": "icorbrey",
 	"engines": {
 		"vscode": "^1.44.0"
