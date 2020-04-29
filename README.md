@@ -2,6 +2,8 @@
 
 Language support for the Pep/9 assembly language.
 
+![](images/syntax-example.png)
+
 ## Features
 
 Adds basic language support for the Pep/9 assembly language used in the Computer Systems college course.
