@@ -9,7 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tooltips for instruction meanings
 - Trace tag support
 
-## [1.2.0] - 2020-05-06
+## [1.1.1] - 2020-05-06
+### Fixed
+- Incorrect version number
+
+## [1.1.0] - 2020-05-06
 ### Added
 - Improved syntax matching
 ### Changed

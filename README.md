@@ -10,7 +10,7 @@ Adds basic language support for the Pep/9 assembly language used in the Computer
 
 ## Release Notes
 
-### 1.2.0
+### 1.1.0
 
 Improved syntax matching.
 
