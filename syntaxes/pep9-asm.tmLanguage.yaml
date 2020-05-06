@@ -1,0 +1,124 @@
+$schema:   https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json
+name:      Pep/9 Assembly
+scopeName: source.pep9-asm
+
+# TO COMPILE:
+# $ npx js-yaml pep9-asm.tmLanguage.yaml > pep9-asm.tmLanguage.json
+
+patterns:
+  - include: "#comments"
+  - include: "#control"
+  - include: "#operations"
+  - include: "#traps"
+  - include: "#constants"
+  - include: "#strings"
+  - include: "#symbols"
+
+repository:
+
+  # Comment Indicators
+  comments:
+    patterns:
+
+      # Documentation Comments
+      - name:  comment.block.documentation.double-semicolon.pep9-asm
+        match: (;;).*$\n?
+
+      # Normal Comments
+      - name:  comment.line.semicolon.pep9-asm
+        match: ;[^;]?.*$\n?
+
+  # Flow of Control Instructions
+  control:
+    patterns:
+
+      # Branch Instructions
+      - name:  keyword.control.branches.pep9-asm
+        match: (?i)\bBR([LG][ET]|EQ|V|C)?\b
+
+      # Execution Control Instructions
+      - name:  keyword.control.execution.pep9-asm
+        match: (?i)\bSTOP\b
+
+      # Subroutine Instructions
+      - name:  keyword.control.subroutine.pep9-asm
+        match: (?i)\b(CALL|RET(TR)?)\b
+
+      # Move Instructions
+      - name:  keyword.control.move.pep9-asm
+        match: (?i)\bMOV(SPA|FLGA|AFLG)\b
+
+      # Stack Pointer Instructions
+      - name:  keyword.control.stack-pointer.pep9-asm
+        match: (?i)\b(ADD|SUB)sp\b
+
+  # General Operations
+  operations:
+    patterns:
+
+      # Bitwise Operations
+      - name:  keyword.operators.bitwise.pep9-asm
+        match: (?i)\b(A(ND|S[LR])|N(EG|OT)|OR|RO[LR])[ax]\b
+
+      # Arithmetic Operations
+      - name:  keyword.operators.arithmetic.pep9-asm
+        match: (?i)\b(ADD|SUB)[ax]\b
+
+      # Memory Operations
+      - name:  keyword.operators.memory.pep9-asm
+        match: (?i)\b(CP|LD|ST)[BW][ax]\b
+
+      # Dot Operations
+      - name:  keyword.operators.dot.pep9-asm
+        match: (?i)\.\b(A(DDRSS|SCII)|BLOCK|E(ND|QUATE)|WORD)\b
+
+  # Trap Instructions
+  traps:
+    patterns:
+
+      # Input Trap Instructions
+      - name:  keyword.operators.traps.input
+        match: (?i)\bDECI\b
+
+      # Output Trap Instructions
+      - name:  keyword.operators.traps.output
+        match: (?i)\b(DEC|HEX|STR)O\b
+    
+      # No-Operation Trap Instructions
+      - name:  keyword.operators.traps.no-operation
+        match: (?i)\bNOPn?\b
+
+  # In-Program Constants
+  constants:
+    patterns:
+
+      # Numbers
+      - name:  constant.numeric.pep9-asm
+        match: -?\b\d+\b
+
+      # Hexadecimal Addresses
+      - name:  constant.numeric.address.pep9-asm
+        match: \b0x\d{4}\b
+
+      # Addressing Modes
+      - name:  constant.language.addressing-mode.pep9-asm
+        match: \b([idnx]|sf?x?)\b
+
+  # Symbols
+  symbols:
+    patterns:
+
+      # Symbols
+      - name:  variable.name.symbol
+        match: (?i)\b[a-z]([a-z]|\d){1,6}\b
+
+  # Strings
+  strings:
+    name:  string.quoted.double.pep9-asm
+    begin: '"'
+    end:   '"'
+    patterns:
+
+      # Escape Characters
+      - name:  constant.character.escape.pep9-asm
+        match: \\.

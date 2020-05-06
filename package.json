@@ -17,11 +17,7 @@
 		"Programming Languages"
 	],
 	"keywords": [
-		"Pep",
-		"Pep/9",
-		"Pep Assembly",
 		"Pep/9 Assembly",
-		"Assembly",
 		"Computer Systems"
 	],
 	"preview": true,
@@ -32,7 +28,7 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "pep9",
+				"id": "pep9-asm",
 				"aliases": [
 					"Pep/9 Assembly",
 					"pep9"
@@ -45,10 +41,13 @@
 		],
 		"grammars": [
 			{
-				"language": "pep9",
-				"scopeName": "source.pep",
-				"path": "./syntaxes/pep9.tmLanguage.json"
+				"language": "pep9-asm",
+				"scopeName": "source.pep9-asm",
+				"path": "./syntaxes/pep9-asm.tmLanguage.json"
 			}
 		]
+	},
+	"devDependencies": {
+		"js-yaml": "^3.13.1"
 	}
 }

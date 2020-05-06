@@ -1,0 +1,137 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Pep/9 Assembly",
+  "scopeName": "source.pep9-asm",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#control"
+    },
+    {
+      "include": "#operations"
+    },
+    {
+      "include": "#traps"
+    },
+    {
+      "include": "#constants"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#symbols"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.block.documentation.double-semicolon.pep9-asm",
+          "match": "(;;).*$\\n?"
+        },
+        {
+          "name": "comment.line.semicolon.pep9-asm",
+          "match": ";[^;]?.*$\\n?"
+        }
+      ]
+    },
+    "control": {
+      "patterns": [
+        {
+          "name": "keyword.control.branches.pep9-asm",
+          "match": "(?i)\\bBR([LG][ET]|EQ|V|C)?\\b"
+        },
+        {
+          "name": "keyword.control.execution.pep9-asm",
+          "match": "(?i)\\bSTOP\\b"
+        },
+        {
+          "name": "keyword.control.subroutine.pep9-asm",
+          "match": "(?i)\\b(CALL|RET(TR)?)\\b"
+        },
+        {
+          "name": "keyword.control.move.pep9-asm",
+          "match": "(?i)\\bMOV(SPA|FLGA|AFLG)\\b"
+        },
+        {
+          "name": "keyword.control.stack-pointer.pep9-asm",
+          "match": "(?i)\\b(ADD|SUB)sp\\b"
+        }
+      ]
+    },
+    "operations": {
+      "patterns": [
+        {
+          "name": "keyword.operators.bitwise.pep9-asm",
+          "match": "(?i)\\b(A(ND|S[LR])|N(EG|OT)|OR|RO[LR])[ax]\\b"
+        },
+        {
+          "name": "keyword.operators.arithmetic.pep9-asm",
+          "match": "(?i)\\b(ADD|SUB)[ax]\\b"
+        },
+        {
+          "name": "keyword.operators.memory.pep9-asm",
+          "match": "(?i)\\b(CP|LD|ST)[BW][ax]\\b"
+        },
+        {
+          "name": "keyword.operators.dot.pep9-asm",
+          "match": "(?i)\\.\\b(A(DDRSS|SCII)|BLOCK|E(ND|QUATE)|WORD)\\b"
+        }
+      ]
+    },
+    "traps": {
+      "patterns": [
+        {
+          "name": "keyword.operators.traps.input",
+          "match": "(?i)\\bDECI\\b"
+        },
+        {
+          "name": "keyword.operators.traps.output",
+          "match": "(?i)\\b(DEC|HEX|STR)O\\b"
+        },
+        {
+          "name": "keyword.operators.traps.no-operation",
+          "match": "(?i)\\bNOPn?\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.numeric.pep9-asm",
+          "match": "-?\\b\\d+\\b"
+        },
+        {
+          "name": "constant.numeric.address.pep9-asm",
+          "match": "\\b0x\\d{4}\\b"
+        },
+        {
+          "name": "constant.language.addressing-mode.pep9-asm",
+          "match": "\\b([idnx]|sf?x?)\\b"
+        }
+      ]
+    },
+    "symbols": {
+      "patterns": [
+        {
+          "name": "variable.name.symbol",
+          "match": "(?i)\\b[a-z]([a-z]|\\d){1,6}\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.pep9-asm",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.pep9-asm",
+          "match": "\\\\."
+        }
+      ]
+    }
+  }
+}

@@ -8,14 +8,11 @@ Language support for the Pep/9 assembly language.
 
 Adds basic language support for the Pep/9 assembly language used in the Computer Systems college course.
 
-## Known Issues
-
-* The way that mneumonics are selected is probably not correct - for now it works as-is, but more work is needed.
-* No semantic highlighting.
-* No tooltips on commands.
-* Trace tags are not highlighted or tracked.
-
 ## Release Notes
+
+### 1.2.0
+
+Improved syntax matching.
 
 ### 1.0.0
 
